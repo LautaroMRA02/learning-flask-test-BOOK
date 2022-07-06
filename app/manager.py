@@ -1,11 +1,9 @@
-from flask import Flask
+from module_1 import iniciar_app
+from config import config
 
 
-app = Flask(__name__)
-
-@app.route("/")
-def hello():
-    return "Hello World!"
+configuracion = config['development']
+app = iniciar_app(configuracion)
 
 if __name__ == "__main__":
     app.run()
